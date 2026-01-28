@@ -2,21 +2,89 @@
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
-    <title>My Microwave Kitchen</title>
+    <title>Riri's Dishes</title>
 </head>
 <body>
 
+    <div class="search-container">
+        <input type="text" id="recipeSearch" onkeyup="searchRecipes()" placeholder="Search for ingredients or names...">
+    </div>
+
+    <div class="recipe-grid">
+    
+    <!-- 1 -->
     <div class="card">
         <h2>🍚 Microwave Mixed Rice</h2>
         <p>A quick, spicy, and cheesy one-bowl meal.</p>
         <a href="microwave-rice.html" class="btn">Cook Now</a>
     </div>
 
+    <!-- 2 -->
     <div class="card">
         <h2>🍝 Creamy Garlic Chicken & Veggie Pasta</h2>
         <p>Simple butter and garlic noodles.</p>
         <a href="garlic-pasta.html" class="btn">Cook Now</a>
     </div>
+
+    <!-- 3 -->
+    <div class="card">
+        <h2>🍫 Microwave Mug Brownie</h2>
+        <p>Simple Felix's brownie by in a mug.</p>
+        <a href="mug-brownie.html" class="btn">Cook Now</a>
+    </div>
+
+    <!-- 4 -->
+    <div class="card">
+        <h2>🥘 Microwave Kimchi-jjigae</h2>
+        <p>Seungmin's kimchi jjigae but in a microwave.</p>
+        <a href="kimchi-stew.html" class="btn">Cook Now</a>
+    </div>
+
+    <!-- 5 -->
+    <div class="card">
+        <h2>🍯 Crispy Gochujang Honey Chicken</h2>
+        <p>Gochujang, Honey, Crispy Thighs. Korean-inspired bowls.</p>
+        <a href="honey-chicken.html" class="btn">Cook Now</a>
+    </div>
+
+    <!-- 6 -->
+    <div class="card">
+        <h2>🌮 Crispy Potato Tacos</h2>
+        <p>Crispy Potatoes, Chipotle Lime, Tortillas. Instant joy.</p>
+        <a href="potato-tacos.html" class="btn">Cook Now</a>
+    </div>
+
+    <!-- 7 -->
+    <div class="card">
+        <h2>🍕 Viral TikTok Pizza Rolls</h2>
+        <p>Dough, Cheese, Pepperoni. Air-fried goodness.</p>
+        <a href="pizza-rolls.html" class="btn">Cook Now</a>
+    </div>
+
+    <!-- 8 -->
+    <div class="card">
+        <h2>🥒 Viral TikTok Cucumber Salad</h2>
+        <p>Simple crunchy, tangy, slightly sweet, umami goody.</p>
+        <a href="cucumber-salad.html" class="btn">Cook Now</a>
+    </div>
+
+    </div>
+
+    <script>
+        function searchRecipes() {
+            let input = document.getElementById('recipeSearch').value.toLowerCase();
+            let cards = document.getElementsByClassName('card');
+
+            for (let i = 0; i < cards.length; i++) {
+                let content = cards[i].innerText.toLowerCase();
+                if (content.includes(input)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>
